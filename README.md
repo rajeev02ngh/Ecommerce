@@ -1,3 +1,22 @@
-#E-commerce
+class Ecommerce:
+    def __init__(self, name, products=[]):
+        self.name = name
+        self.products = products
 
-E-commerce, short for electronic commerce, refers to the buying and selling of goods and services over the internet. It encompasses a wide range of online activities, including online shopping, electronic payments, and digital storefronts. E-commerce has transformed traditional retail by enabling businesses to reach a global audience, streamline transactions, and provide convenient shopping experiences for consumers. It involves various models such as business-to-consumer (B2C), business-to-business (B2B), and peer-to-peer (P2P) transactions.
+    def add_product(self, product):
+        self.products.append(product)
+        print(f"{product} added to {self.name}")
+
+    def list_products(self):
+        print(f"Products available in {self.name}:")
+        for product in self.products:
+            print(f"- {product}")
+
+# Example usage:
+if __name__ == "__main__":
+    my_ecommerce = Ecommerce("MyStore")
+    
+    my_ecommerce.add_product("Laptop")
+    my_ecommerce.add_product("Smartphone")
+    
+    my_ecommerce.list_products()
